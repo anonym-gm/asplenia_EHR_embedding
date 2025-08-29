@@ -6,7 +6,7 @@ age_vax_flu
 qt_vax_pre_splenectomy
 qt_vax_post_splenectomy
 qt_vax_totali
-qt_vax_pre_splenectomy_hib
-qt_vax_pre_splenectomy_pneumo
-qt_vax_pre_splenectomy_meningo
-qt_vax_pre_splenectomy_flu
+pre_splenectomy_vax_hib
+pre_splenectomy_vax_pneumo
+pre_splenectomy_vax_meningo
+pre_splenectomy_vax_flu

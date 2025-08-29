@@ -15,4 +15,3 @@ heparin
 hbf
 bmi
 tsh
-alive
