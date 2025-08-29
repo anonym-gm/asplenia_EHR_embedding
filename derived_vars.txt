@@ -1,0 +1,12 @@
+age_group
+age_vax_hib
+age_vax_pneumo
+age_vax_meningo
+age_vax_flu
+qt_vax_pre_splenectomy
+qt_vax_post_splenectomy
+qt_vax_totali
+qt_vax_pre_splenectomy_hib
+qt_vax_pre_splenectomy_pneumo
+qt_vax_pre_splenectomy_meningo
+qt_vax_pre_splenectomy_flu
