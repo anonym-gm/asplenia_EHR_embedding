@@ -2011,4 +2011,3 @@ class TimeAwareLSTMModel(nn.Module):
         return torch.cat(patient_embs, dim=0).numpy(), patient_ids
 
 
-    
