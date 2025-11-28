@@ -413,7 +413,7 @@ class RETAINDataset(Dataset):
             raise ValueError("Seqs and Labels have different lengths")
 
         self.seqs = []
-        self.labels = list(labels)
+        self.labels = [int(l) for l in labels]
         self.num_features = num_features
         self.reverse = reverse
         self.create_dummy = create_dummy
@@ -496,7 +496,7 @@ def visit_collate_fn(batch):
         sorted_labels.append(batch_label[i])
 
     seq_tensor = np.stack(sorted_padded_seqs, axis=0)
-    label_tensor = torch.tensor(sorted_labels)
+    label_tensor = torch.tensor(sorted_labels, dtype=torch.long)
 
     return torch.from_numpy(seq_tensor), label_tensor, list(sorted_lengths)
    
@@ -627,8 +627,7 @@ class RETAINModel(nn.Module):
                     inputs, targets, lengths = batch
 
                     input_var  = inputs.to(self.device)
-                    target_var = targets.to(self.device).view(-1)
-
+                    target_var = targets.long().to(self.device).view(-1)
                     output, alpha, beta = self(input_var, lengths)
                     loss = criterion(output, target_var)
                     assert not np.isnan(loss.item()), "Model diverged with loss = NaN"
